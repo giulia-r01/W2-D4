@@ -116,6 +116,15 @@ console.log(reverseString())
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const upperFirst = function (txt3 = "Questa è una stringa") {
+  return (txt3 = txt3
+    .split(" ")
+    .map((txt3) => txt3.charAt(0).toUpperCase() + txt3.slice(1))
+    .join(" "))
+}
+
+console.log(upperFirst())
+
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
  della stringa originale.
@@ -123,8 +132,24 @@ console.log(reverseString())
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const cutString = function (txt4 = "Anche questa è una stringa") {
+  return (txt4 = txt4.slice(1, 25))
+}
+
+console.log(cutString())
+
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+const giveMeRandom = function (numToTxt) {
+  let weirdNumbers = []
+  for (let i = 0; i < numToTxt; i++) {
+    weirdNumbers.push(Math.floor(Math.random() * 11))
+  }
+  return weirdNumbers
+}
+
+console.log(giveMeRandom(7))
