@@ -34,7 +34,11 @@ console.log("Valore ottenuto", crazySum(2, 2))
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 const crazyDiff = function (n1, n2 = 19) {
-  return n1 - n2
+  if (Math.abs(n1 - n2) > 19) {
+    return Math.abs(n1 - n2) * 3
+  } else {
+    return Math.abs(n1 - n2)
+  }
 }
 
 console.log("n1 - n2 fa: ", crazyDiff(100))
@@ -54,7 +58,7 @@ const boundary = function (num1) {
   }
 }
 
-console.log("Il valore", boundary(100), "è compreso tra 20 e 100 e non è 400")
+console.log("Il valore", boundary(100), "è compreso tra 20 e 100 oppure è 400")
 
 /* ESERCIZIO 5
  Scrivi una funzione di nome "epify" che accetta una stringa come parametro.
