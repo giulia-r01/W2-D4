@@ -47,20 +47,14 @@ console.log("n1 - n2 fa: ", crazyDiff(100))
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 const boundary = function (num1) {
-  if (num1 >= 20 && num1 <= 100) {
-    return num1
-  } else if (num1 === 400) {
-    return num1
+  if ((num1 >= 20 && num1 <= 100) || num1 === 400) {
+    return true
   } else {
     return num1
   }
 }
 
-console.log(
-  "Il valore",
-  boundary(500),
-  "non è compreso tra 20 e 100 e non è 400"
-)
+console.log("Il valore", boundary(100), "è compreso tra 20 e 100 e non è 400")
 
 /* ESERCIZIO 5
  Scrivi una funzione di nome "epify" che accetta una stringa come parametro.
@@ -71,7 +65,7 @@ console.log(
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 const epify = function (txt = "Diventa Web Developer!") {
-  if (txt.slice(0, 5) === "EPICODE") {
+  if (txt.slice(0, 7) === "EPICODE") {
     return txt
   } else {
     return "EPICODE " + txt
@@ -88,10 +82,12 @@ console.log("È venuto fuori:", epify())
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 const check3and7 = function (numberPos) {
-  if (numberPos % 3 === 0) {
+  if (numberPos % 3 === 0 && numberPos > 0) {
     return numberPos + " è un multiplo di 3"
-  } else if (numberPos % 7 === 0) {
+  } else if (numberPos % 7 === 0 && numberPos > 0) {
     return numberPos + " è un multiplo di 7"
+  } else {
+    return numberPos + " non è un multiplo né di 3 né di 7"
   }
 }
 
@@ -116,7 +112,7 @@ console.log(reverseString())
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-const upperFirst = function (txt3 = "Questa è una stringa") {
+const upperFirst = function (txt3 = "questa è una stringa") {
   return (txt3 = txt3
     .split(" ")
     .map((txt3) => txt3.charAt(0).toUpperCase() + txt3.slice(1))
